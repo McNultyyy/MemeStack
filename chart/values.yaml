@@ -11,7 +11,7 @@ container:
   image: mcnultyyy/memestack
   tag: latest
   port: 80
-replicas: 1
+replicas: 0
 
 service:
   port: 8888
