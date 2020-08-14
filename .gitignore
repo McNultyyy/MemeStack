@@ -5,3 +5,5 @@
 .vs
 
 **/*.feature.cs
+
+.DS_STORE

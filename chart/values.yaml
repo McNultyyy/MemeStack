@@ -10,8 +10,8 @@ container:
   pullPolicy: IfNotPresent
   image: mcnultyyy/memestack
   tag: latest
-  port: 80
-replicas: 0
+  port: 5001
+replicas: 1
 
 service:
   port: 8888

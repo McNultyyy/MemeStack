@@ -13,10 +13,10 @@ namespace webapi.test.integration
         {
             var services = new ServiceCollection();
 
-            services.AddHttpClient(nameof(StepDefinition1),
+            services.AddHttpClient(nameof(ApiSteps),
                 client => { client.BaseAddress = new Uri("https://localhost:44347/"); });
 
-            services.AddTransient<MyContext>();
+            services.AddTransient<ApiContext>();
 
             // TODO: add your test dependencies here
             // NOTE: since v0.4.0 it's no longer necessary to manually add your [Binding] classes

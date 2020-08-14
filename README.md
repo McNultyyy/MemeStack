@@ -9,7 +9,7 @@
 `helm install --values=chart/values.yaml webapi ./chart`
 
 #### Updates
-`helm update --values=chart/values.yaml webapi ./chart`
+`helm upgrade --values=chart/values.yaml webapi ./chart`
 
 ### Istio
 `istioctl install --set values.kiali.enabled=true --set profile=demo`
@@ -26,3 +26,6 @@
 `kubectl get crds | grep 'istio.io' | wc -l`
 
 `helm template install/kubernetes/helm/istio --name istio --namespace istio-system | kubectl apply -f -`
+
+### Open Metrics Dashboard
+`kubectl -n istio-system port-forward $(kubectl -n istio-system get pod -l app=grafana -o jsonpath='{.items[0].metadata.name}') 3000:3000`

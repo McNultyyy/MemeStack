@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -10,15 +9,15 @@ using TechTalk.SpecFlow;
 namespace webapi.test.integration.Steps
 {
     [Binding]
-    public class StepDefinition1
+    public class ApiSteps
     {
-        private readonly MyContext _context;
+        private readonly ApiContext _context;
         private readonly HttpClient _client;
 
-        public StepDefinition1(MyContext context, IHttpClientFactory clientFactory)
+        public ApiSteps(ApiContext context, IHttpClientFactory clientFactory)
         {
             _context = context;
-            _client = clientFactory.CreateClient(nameof(StepDefinition1));
+            _client = clientFactory.CreateClient(nameof(ApiSteps));
         }
 
 
@@ -42,25 +41,4 @@ namespace webapi.test.integration.Steps
         }
 
     }
-
-    public class MyContext
-    {
-        public HttpResponseMessage Response { get; set; }
-    }
-
-    public static class Extensions
-    {
-        public static HttpMethod ToHttpMethod(this string httpMethod)
-        {
-            return httpMethod.ToUpper() switch
-            {
-                "GET" => HttpMethod.Get,
-                "POST" => HttpMethod.Post,
-
-                _ => throw new ArgumentOutOfRangeException(nameof(httpMethod), httpMethod, "")
-            };
-        }
-    }
-
-
 }

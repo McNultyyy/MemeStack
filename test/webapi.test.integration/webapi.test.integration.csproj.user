@@ -2,7 +2,7 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
-    <Compile Update="Steps\StepDefinition1.cs">
+    <Compile Update="Steps\ApiSteps.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

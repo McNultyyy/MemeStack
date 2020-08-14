@@ -2,11 +2,11 @@ FROM mcr.microsoft.com/dotnet/core/sdk:3.1-alpine as build
 WORKDIR /webapi
 
 # copy csproj and restore
-COPY webapi/*.csproj ./aspnetapp/
+COPY *.csproj ./aspnetapp/
 RUN cd ./aspnetapp/ && dotnet restore 
 
 # copy all files and build
-COPY webapi/. ./aspnetapp/
+COPY ./ ./aspnetapp/
 WORKDIR /webapi/aspnetapp
 RUN dotnet publish -c Release -o out
 
